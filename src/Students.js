@@ -53,14 +53,14 @@ export default function Students(){
                                 <h3>{studentCheck.studentLastName} {studentCheck.studentName} {studentCheck.studentMiddleName} Год выпуска {studentCheck.studentStudyEnd}</h3>
                             </div>
                             <div className={"down1"}>
-                                {studentCheck.studentDescription}
+                                <p className={"desc"}>{studentCheck.studentDescription}</p>
                             </div>
                         </div>
                         <div className={"rightContainer"}>
                             <div className={"up2"}>
                                 <img className={"photo"} src = {process.env.PUBLIC_URL + "/images/" + studentCheck.studentPhotoPath}/>
                             </div>
-                            <div className={"down2"}>
+                            <div className={"down2"} align={"center"}>
                                 <h3>Звезда номер {studentCheck.studentId}</h3>
                             </div>
                         </div>

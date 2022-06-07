@@ -3,15 +3,38 @@ body {
 }
 .container{
     display: flex;
+    height: 700px;
 }
 .leftContainer{
     width: 60%;
     float:left;
+    height: 700px;
 }
 .rightContainer{
     width: 40%;
     float:right;
+    height: 700px;
 }
 .photo{
-    height:800px
+    max-width: 400px;
+    height: 600px;
+}
+.up1{
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+.down1{
+    background-color: #eeeeee;
+    border-radius: 10px;
+    height: 600px;
+    border-color: black;
+}
+.down2{
+    background-color: #eeeeee;
+    border-radius: 10px;
+    align-content: center;
+    width: 400px;
+}
+.desc{
+    font-size: 20px;
 }
