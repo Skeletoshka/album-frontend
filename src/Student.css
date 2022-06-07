@@ -1,0 +1,17 @@
+body {
+    background: #28ed3c;
+}
+.container{
+    display: flex;
+}
+.leftContainer{
+    width: 60%;
+    float:left;
+}
+.rightContainer{
+    width: 40%;
+    float:right;
+}
+.photo{
+    height:800px
+}
