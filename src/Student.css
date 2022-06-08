@@ -27,6 +27,7 @@ body {
     background-color: #eeeeee;
     border-radius: 10px;
     max-height: 1000px;
+    min-height: 710px;
     border-color: black;
 }
 .down2{
