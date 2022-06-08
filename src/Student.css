@@ -3,12 +3,12 @@ body {
 }
 .container{
     display: flex;
-    height: 700px;
+    height: 900px;
 }
 .leftContainer{
-    width: 60%;
+    width: 700px;
     float:left;
-    height: 700px;
+    height: 900px;
 }
 .rightContainer{
     width: 40%;
@@ -17,7 +17,7 @@ body {
 }
 .photo{
     max-width: 400px;
-    height: 600px;
+    max-height: 1000px;
 }
 .up1{
     background-color: #eeeeee;
@@ -26,7 +26,7 @@ body {
 .down1{
     background-color: #eeeeee;
     border-radius: 10px;
-    height: 600px;
+    max-height: 1000px;
     border-color: black;
 }
 .down2{

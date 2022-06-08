@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import "./Student.css"
+import {input2} from "./CONST"
 
 const emptyItem = {
     studentId:0,
@@ -13,9 +14,22 @@ const emptyItem = {
     studentSpecialCase:0
 }
 
-const firstStudent = <div>
-    <h1>Главная страница</h1>
-</div>
+const firstStudent =
+    <div className={"container"}>
+        <div className={"leftContainer"}>
+            <div className={"up1"} align={"center"}>
+                <h3>Аллея звёзд</h3>
+            </div>
+            <div className={"down1"}>
+                <p className={"desc"}>{input2}</p>
+            </div>
+        </div>
+        <div className={"rightContainer"}>
+            <div className={"up2"}>
+                <img className={"photo"} src = {process.env.PUBLIC_URL + "/MainPicture.jpeg"} alt={"main photo"}/>
+            </div>
+        </div>
+    </div>
 
 export default function Students(){
     document.body.style = 'background: #0f5;';
