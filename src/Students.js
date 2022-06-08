@@ -9,6 +9,7 @@ const emptyItem = {
     studentLastName:"",
     studentMiddleName:"",
     facultyId:1,
+    facultyName:"",
     studentPhotoPath:"",
     studentDescription:"",
     studentStudyEnd:0,
@@ -67,21 +68,26 @@ export default function Students(){
                 check = false;
                 return (
                     <div className={"container"}>
-                        <div className={"leftContainer"}>
-                            <div className={"up1"}>
-                                <h3>{studentCheck.studentLastName} {studentCheck.studentName} {studentCheck.studentMiddleName} Год выпуска {studentCheck.studentStudyEnd}</h3>
+                        <div className={"PageContainer"}>
+                            <div className={"leftContainer"}>
+                                <div className={"up1"}>
+                                    <h3>{studentCheck.studentLastName} {studentCheck.studentName} {studentCheck.studentMiddleName} Год выпуска {studentCheck.studentStudyEnd}</h3>
+                                </div>
+                                <div className={"down1"}>
+                                    <p className={"desc"}>{studentCheck.studentDescription}</p>
+                                </div>
                             </div>
-                            <div className={"down1"}>
-                                <p className={"desc"}>{studentCheck.studentDescription}</p>
+                            <div className={"rightContainer"}>
+                                <div className={"up2"}>
+                                    <img className={"photo"} src = {process.env.PUBLIC_URL + "/images/" + studentCheck.studentPhotoPath} alt={"student photo"}/>
+                                </div>
+                                <div className={"down2"} align={"center"}>
+                                    <h3>Звезда номер {studentCheck.studentId}</h3>
+                                </div>
                             </div>
                         </div>
-                        <div className={"rightContainer"}>
-                            <div className={"up2"}>
-                                <img className={"photo"} src = {process.env.PUBLIC_URL + "/images/" + studentCheck.studentPhotoPath} alt={"student photo"}/>
-                            </div>
-                            <div className={"down2"} align={"center"}>
-                                <h3>Звезда номер {studentCheck.studentId}</h3>
-                            </div>
+                        <div className={"downContainer"} align={"center"}>
+                            <p className={"facultyName"}>{studentCheck.facultyName} факультет</p>
                         </div>
                     </div>)
             }
@@ -117,6 +123,9 @@ export default function Students(){
                                 <h3>Звезда номер {studentCheck.studentId}</h3>
                             </div>
                         </div>
+                        <div className={"downContainer"} align={"center"}>
+                            <h2>{studentCheck.facultyName} факультет</h2>
+                        </div>
                     </div>)
             }
             else {i = i + 1; return null}
@@ -124,7 +133,7 @@ export default function Students(){
     }
 
     return(
-        <div className={"container"}>
+        <div className={"albumContainer"}>
             <div className={"leftButton"}><input type = {"image"} src = {process.env.PUBLIC_URL + "/arrowLeft.png"} alt={"previous student"} onClick={() => previousStudent()}/></div>
             <div className={"albumPage"}>{student}</div>
             <div className={"rightButton"}><input type = {"image"} src = {process.env.PUBLIC_URL + "/arrowNext.png"} alt={"next student"} onClick={() => nextStudent()}/></div>
