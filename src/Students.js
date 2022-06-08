@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import "./Student.css"
 import {input2} from "./CONST"
+import {useParams} from "react-router";
 
 const emptyItem = {
     studentId:0,
@@ -32,6 +33,8 @@ const firstStudent =
     </div>
 
 export default function Students(){
+    const params = useParams();
+    console.log(params.facultyId)
     document.body.style = 'background: #0f5;';
 
     const [students, setStudents] = useState();
@@ -46,7 +49,7 @@ export default function Students(){
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(1)
+            body: JSON.stringify(Number(params.facultyId))
         })
             .then(response => response.json())
             .then(data => setStudents(data));

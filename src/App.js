@@ -13,7 +13,7 @@ class App extends Component {
         <div id='main'>
         <BrowserRouter>
           <Routes>
-              <Route path='/' element={<Students />} />
+              <Route path='/:facultyId' element={<Students />} />
           </Routes>
         </BrowserRouter>
         </div>
