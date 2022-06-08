@@ -66,12 +66,15 @@ export default function Students(){
         setStudent(students?.map(studentCheck => {
             if(i === count && check && students?.length > count && count >= 0){
                 check = false;
+                let endYear;
+                if(studentCheck.studentSpecialCase === 1) endYear = "Особый случай"
+                else endYear = "Год выпуска: " + studentCheck.studentStudyEnd;
                 return (
                     <div className={"container"}>
                         <div className={"PageContainer"}>
                             <div className={"leftContainer"}>
                                 <div className={"up1"}>
-                                    <h3>{studentCheck.studentLastName} {studentCheck.studentName} {studentCheck.studentMiddleName} Год выпуска {studentCheck.studentStudyEnd}</h3>
+                                    <h3>{studentCheck.studentLastName} {studentCheck.studentName} {studentCheck.studentMiddleName} {endYear}</h3>
                                 </div>
                                 <div className={"down1"}>
                                     <p className={"desc"}>{studentCheck.studentDescription}</p>
@@ -98,33 +101,36 @@ export default function Students(){
     function previousStudent(){
         let i = 0;
         let check = true;
-        console.log(count)
         if(count <= 0) {setCount(students?.length - 1); }
         else{setCount(count - 1)}
-        console.log(count)
         setStudent(students?.map(studentCheck => {
             if(i === count && check && students?.length > count && count >= 0){
                 check = false;
+                let endYear;
+                if(studentCheck.studentSpecialCase === 1) endYear = "Особый случай"
+                else endYear = "Год выпуска: " + studentCheck.studentStudyEnd;
                 return (
                     <div className={"container"}>
-                        <div className={"leftContainer"}>
-                            <div className={"up1"}>
-                                <h3>{studentCheck.studentLastName} {studentCheck.studentName} {studentCheck.studentMiddleName} Год выпуска {studentCheck.studentStudyEnd}</h3>
+                        <div className={"PageContainer"}>
+                            <div className={"leftContainer"}>
+                                <div className={"up1"}>
+                                    <h3>{studentCheck.studentLastName} {studentCheck.studentName} {studentCheck.studentMiddleName} {endYear}</h3>
+                                </div>
+                                <div className={"down1"}>
+                                    <p className={"desc"}>{studentCheck.studentDescription}</p>
+                                </div>
                             </div>
-                            <div className={"down1"}>
-                                <p className={"desc"}>{studentCheck.studentDescription}</p>
-                            </div>
-                        </div>
-                        <div className={"rightContainer"}>
-                            <div className={"up2"}>
-                                <img className={"photo"} src = {process.env.PUBLIC_URL + "/images/" + studentCheck.studentPhotoPath} alt={"student photo"}/>
-                            </div>
-                            <div className={"down2"} align={"center"}>
-                                <h3>Звезда номер {studentCheck.studentId}</h3>
+                            <div className={"rightContainer"}>
+                                <div className={"up2"}>
+                                    <img className={"photo"} src = {process.env.PUBLIC_URL + "/images/" + studentCheck.studentPhotoPath} alt={"student photo"}/>
+                                </div>
+                                <div className={"down2"} align={"center"}>
+                                    <h3>Звезда номер {studentCheck.studentId}</h3>
+                                </div>
                             </div>
                         </div>
                         <div className={"downContainer"} align={"center"}>
-                            <h2>{studentCheck.facultyName} факультет</h2>
+                            <p className={"facultyName"}>{studentCheck.facultyName} факультет</p>
                         </div>
                     </div>)
             }
