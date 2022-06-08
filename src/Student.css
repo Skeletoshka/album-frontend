@@ -4,37 +4,42 @@ body {
 .container{
     display: flex;
     height: 900px;
+    min-width: 100%;
 }
 .leftContainer{
-    width: 700px;
+    width: 60%;
     float:left;
-    height: 900px;
+    max-height: 100%;
 }
 .rightContainer{
     width: 40%;
     float:right;
-    height: 700px;
+    max-height: 100%;
 }
-.photo{
-    max-width: 400px;
-    max-height: 1000px;
+.photo {
+    max-width: 100%;
+    max-height: 900px;
+}
+.up2{
+    max-height: 900px;
+    width: 100%;
 }
 .up1{
     background-color: #eeeeee;
     border-radius: 10px;
+    width: 100%;
 }
 .down1{
+    max-width: 100%;
     background-color: #eeeeee;
     border-radius: 10px;
-    max-height: 1000px;
-    min-height: 710px;
-    border-color: black;
+    min-height: 100%;
 }
 .down2{
     background-color: #eeeeee;
     border-radius: 10px;
-    align-content: center;
-    width: 400px;
+    width: 100%;
+    max-height: 10%;
 }
 .desc{
     font-size: 20px;
@@ -45,8 +50,7 @@ body {
 .rightButton{
     margin: 300px 0;
     float:right;
-    justify-content: space-between;
 }
 .albumPage{
-    width: 1100px;
+    width:80%;
 }
