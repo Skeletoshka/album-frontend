@@ -38,3 +38,14 @@ body {
 .desc{
     font-size: 20px;
 }
+.leftButton{
+    margin: 300px 0;
+}
+.rightButton{
+    margin: 300px 0;
+    float:right;
+    justify-content: space-between;
+}
+.albumPage{
+    width: 1100px;
+}

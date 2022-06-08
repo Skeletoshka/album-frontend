@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Students from './Students';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import moment from 'moment';

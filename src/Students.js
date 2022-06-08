@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import {Button} from "reactstrap";
 import "./Student.css"
 
 const emptyItem = {
@@ -39,12 +38,15 @@ export default function Students(){
             .then(data => setStudents(data));
     }, [action])
 
+    //TODO Убрать баг, когда count на счет впереди
     function nextStudent(){
         let i = 0;
         let check = true;
+        if(count < students?.length-1) {setCount(count + 1); }//console.log(count)}
+        else{setCount(0)}
+        console.log(count)
         setStudent(students?.map(studentCheck => {
-            if(i === count && check){
-                setCount(count + 1);
+            if(i === count && check && students?.length > count && count >= 0){
                 check = false;
                 return (
                     <div className={"container"}>
@@ -58,7 +60,41 @@ export default function Students(){
                         </div>
                         <div className={"rightContainer"}>
                             <div className={"up2"}>
-                                <img className={"photo"} src = {process.env.PUBLIC_URL + "/images/" + studentCheck.studentPhotoPath}/>
+                                <img className={"photo"} src = {process.env.PUBLIC_URL + "/images/" + studentCheck.studentPhotoPath} alt={"student photo"}/>
+                            </div>
+                            <div className={"down2"} align={"center"}>
+                                <h3>Звезда номер {studentCheck.studentId}</h3>
+                            </div>
+                        </div>
+                    </div>)
+            }
+            else {i = i + 1; return null}
+        }))
+    }
+
+    function previousStudent(){
+        let i = 0;
+        let check = true;
+        console.log(count)
+        if(count <= 0) {setCount(students?.length - 1); }
+        else{setCount(count - 1)}
+        console.log(count)
+        setStudent(students?.map(studentCheck => {
+            if(i === count && check && students?.length > count && count >= 0){
+                check = false;
+                return (
+                    <div className={"container"}>
+                        <div className={"leftContainer"}>
+                            <div className={"up1"}>
+                                <h3>{studentCheck.studentLastName} {studentCheck.studentName} {studentCheck.studentMiddleName} Год выпуска {studentCheck.studentStudyEnd}</h3>
+                            </div>
+                            <div className={"down1"}>
+                                <p className={"desc"}>{studentCheck.studentDescription}</p>
+                            </div>
+                        </div>
+                        <div className={"rightContainer"}>
+                            <div className={"up2"}>
+                                <img className={"photo"} src = {process.env.PUBLIC_URL + "/images/" + studentCheck.studentPhotoPath} alt={"student photo"}/>
                             </div>
                             <div className={"down2"} align={"center"}>
                                 <h3>Звезда номер {studentCheck.studentId}</h3>
@@ -71,9 +107,10 @@ export default function Students(){
     }
 
     return(
-        <div>
-            {student}
-            <Button onClick={() => nextStudent()}>Дальше</Button>
+        <div className={"container"}>
+            <div className={"leftButton"}><input type = {"image"} src = {process.env.PUBLIC_URL + "/arrowLeft.png"} alt={"previous student"} onClick={() => previousStudent()}/></div>
+            <div className={"albumPage"}>{student}</div>
+            <div className={"rightButton"}><input type = {"image"} src = {process.env.PUBLIC_URL + "/arrowNext.png"} alt={"next student"} onClick={() => nextStudent()}/></div>
         </div>
 
     )
