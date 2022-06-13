@@ -4,7 +4,6 @@ body {
 .container{
     height: 900px;
     min-width: 100%;
-
 }
 .leftContainer{
     width: 60%;
@@ -34,7 +33,7 @@ body {
     max-width: 100%;
     background-color: #eeeeee;
     border-radius: 10px;
-    min-height: 95%;
+    min-height: 89.5%;
     border: 1px solid black;
 }
 .down2{
@@ -76,4 +75,7 @@ body {
     font-size: 40px;
     min-width: 100%;
     font-style: italic;
+}
+.logo{
+    max-width: 60px;
 }

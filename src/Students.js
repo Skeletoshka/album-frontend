@@ -74,7 +74,8 @@ export default function Students(){
                         <div className={"PageContainer"}>
                             <div className={"leftContainer"}>
                                 <div className={"up1"}>
-                                    <h3>{studentCheck.studentLastName} {studentCheck.studentName} {studentCheck.studentMiddleName} {endYear}</h3>
+                                    <h3>{studentCheck.studentLastName} {studentCheck.studentName} {studentCheck.studentMiddleName}
+                                    <img className={"logo"} src = {process.env.PUBLIC_URL+"/star.png"}/> {endYear}</h3>
                                 </div>
                                 <div className={"down1"}>
                                     <p className={"desc"}>{studentCheck.studentDescription}</p>
