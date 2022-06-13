@@ -85,7 +85,7 @@ export default function Students(){
                                     <img className={"photo"} src = {process.env.PUBLIC_URL + "/images/" + studentCheck.studentPhotoPath} alt={"student photo"}/>
                                 </div>
                                 <div className={"down2"} align={"center"}>
-                                    <h3>Звезда номер {studentCheck.studentId}</h3>
+                                    <h3>Звезда номер {studentCheck.studentNumStar}</h3>
                                 </div>
                             </div>
                         </div>

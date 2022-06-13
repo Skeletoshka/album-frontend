@@ -5,15 +5,15 @@ import "./AddStudent.css"
 
 const emptyItem = {
     studentId:0,
-    studentName:"",
-    studentLastName:"",
+    studentName:null,
+    studentLastName:null,
     studentMiddleName:"",
     facultyId:1,
     facultyName:"",
-    studentPhotoPath:"",
-    studentDescription:"",
-    studentStudyEnd:0,
-    studentSpecialCase:0,
+    studentPhotoPath:null,
+    studentDescription:null,
+    studentStudyEnd:null,
+    studentSpecialCase:1,
     studentNumStar: 0
 }
 
@@ -26,7 +26,6 @@ export default function AddStudent(){
     const [facultyList, setFacultyList] = useState()
     const [item, setItem] = useState(emptyItem);
     const [action, setAction] = useState("get" );
-    const [Disabled, setDisabled] = useState("true");
 
     useEffect(() => {
         fetch('http://localhost:8090/student/getlist',{
@@ -108,6 +107,26 @@ export default function AddStudent(){
         setFacultyList(faculties?.map(faculty => {
             return <option value={faculty.facultyId}>{faculty.facultyName}</option>
         }))
+    }
+
+    function onFileChangeHandler(e){
+        e.preventDefault();
+        let formData;
+        formData = new FormData();
+        formData.append('file', e.target.files[0]);
+        const target = e.target;
+        const name = target.name;
+        const item1 = item;
+        fetch('http://localhost:8090/student/upload', {
+            method: 'post',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+            item1[name] = data.fileName;
+            setItem(item1);
+            console.log(item)
+        });
     }
 
     if(action === "get" || action === "delete") {
@@ -193,8 +212,8 @@ export default function AddStudent(){
                         </FormGroup>
                         <FormGroup>
                             <Label for="studentPhotoPath">Путь к фото студента<span className={"required"}>*</span></Label>
-                            <Input required={true} type="text" name="studentPhotoPath" id="studentPhotoPath" defaultValue={item.studentPhotoPath || ''}
-                                   onChange={handleChange} autoComplete="studentPhotoPath"/>
+                            <Input type="file" className="form-control" name="studentPhotoPath" id="studentPhotoPath"
+                                   autoComplete="studentPhotoPath" onChange={onFileChangeHandler}/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="facultyName">Факультет студента</Label>
