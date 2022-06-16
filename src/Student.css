@@ -28,6 +28,9 @@ body {
     border-radius: 10px;
     width: 100%;
     border: 1px solid black;
+    font-size: 0.8vw;
+    font-style: italic;
+    font-weight: bold;
 }
 .down1{
     max-width: 100%;
@@ -44,15 +47,15 @@ body {
     border: 1px solid black;
 }
 .desc{
-    font-size: 25.47px;
+    font-size: 0.8vw;
     min-height: 80%;
     font-style: italic;
     font-weight: bold;
-    line-height: 1.45em;
-    text-indent: 3em;
+    line-height: 0.95vw;
+    text-indent: 1vw;
     text-align: justify;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: calc((25vw - 600px)/(1920 - 600) * (40 - 20) + 20px);
+    margin-right: calc((25vw - 600px)/(1920 - 600) * (40 - 20) + 20px);
 }
 .leftButton{
     display: table-cell;

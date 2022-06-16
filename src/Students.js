@@ -27,7 +27,7 @@ const firstStudent =
             </div>
             <div className={"rightContainerTitul"}>
                 <div className={"up1"} align={"center"}>
-                    <h3>Аллея звёзд факультета иностранных языков</h3>
+                    Аллея звёзд факультета иностранных языков
                 </div>
                 <div className={"down1"}>
                     <div className={"desc"}>
