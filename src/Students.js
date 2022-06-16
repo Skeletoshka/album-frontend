@@ -31,9 +31,9 @@ const firstStudent =
                 </div>
                 <div className={"down1"}>
                     <div className={"desc"}>
-                        <p>{input1}</p>
-                        <p>{input2}</p>
-                        <p className={"year"}>2016 год</p>
+                        <div>{input1}</div>
+                        <div>{input2}</div>
+                        <div className={"year"}>2016 год</div>
                     </div>
                 </div>
             </div>
