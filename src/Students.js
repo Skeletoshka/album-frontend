@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import "./Student.css"
-import {input2} from "./CONST"
+import {input1, input2} from "./CONST"
 import {useParams} from "react-router";
 
 const emptyItem = {
@@ -18,18 +18,24 @@ const emptyItem = {
 }
 
 const firstStudent =
-    <div className={"container"}>
-        <div className={"leftContainer"}>
-            <div className={"up1"} align={"center"}>
-                <h3>Аллея звёзд</h3>
+    <div className={"containerTitul"}>
+        <div>
+            <div className={"leftContainerTitul"}>
+                <div className={"up2"}>
+                    <img className={"photoTitul"} src = {process.env.PUBLIC_URL + "/MainPicture.jpeg"} alt={"main photo"}/>
+                </div>
             </div>
-            <div className={"down1"}>
-                <p className={"desc"}>{input2}</p>
-            </div>
-        </div>
-        <div className={"rightContainer"}>
-            <div className={"up2"}>
-                <img className={"photo"} src = {process.env.PUBLIC_URL + "/MainPicture.jpeg"} alt={"main photo"}/>
+            <div className={"rightContainerTitul"}>
+                <div className={"up1"} align={"center"}>
+                    <h3>Аллея звёзд факультета иностранных языков</h3>
+                </div>
+                <div className={"down1"}>
+                    <div className={"desc"}>
+                        <p>{input1}</p>
+                        <p>{input2}</p>
+                        <p className={"year"}>2016 год</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -91,7 +97,7 @@ export default function Students(){
                             </div>
                         </div>
                         <div className={"downContainer"} align={"center"}>
-                            <p className={"facultyName"}>{studentCheck.facultyName} факультет</p>
+                            <p className={"facultyName"}>Факультет {studentCheck.facultyName.toLowerCase()}</p>
                         </div>
                     </div>)
             }
@@ -131,7 +137,7 @@ export default function Students(){
                             </div>
                         </div>
                         <div className={"downContainer"} align={"center"}>
-                            <p className={"facultyName"}>{studentCheck.facultyName} факультет</p>
+                            <p className={"facultyName"}>Факультет {studentCheck.facultyName.toLowerCase()}</p>
                         </div>
                     </div>)
             }

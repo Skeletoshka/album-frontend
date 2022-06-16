@@ -2,7 +2,7 @@ body {
     background: #28ed3c;
 }
 .container{
-    height: 900px;
+    height: 100%;
     min-width: 100%;
 }
 .leftContainer{
@@ -44,18 +44,31 @@ body {
     border: 1px solid black;
 }
 .desc{
-    font-size: 20px;
+    font-size: 25.47px;
     min-height: 80%;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.45em;
+    text-indent: 3em;
+    text-align: justify;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 .leftButton{
-    margin: 300px 0;
+    display: table-cell;
+    vertical-align: middle;
+    width: 1%;
 }
 .rightButton{
-    margin: 300px 0;
-    float:right;
+    display: table-cell;
+    vertical-align: middle;
+    width: 1%;
 }
 .albumPage{
     width:80%;
+    margin:auto;
+    display: table-cell;
+    vertical-align: middle;
 }
 .PageContainer{
     display: flex;
@@ -69,7 +82,13 @@ body {
     border: 1px solid black;
 }
 .albumContainer{
-    display: flex;
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin:auto;
 }
 .facultyName{
     font-size: 40px;
@@ -78,4 +97,26 @@ body {
 }
 .logo{
     max-width: 60px;
+}
+.leftContainerTitul{
+    width: 35%;
+    float:left;
+    max-height: 100%;
+}
+.rightContainerTitul{
+    width: 63%;
+    float:right;
+    height: 90%;
+}
+.photoTitul {
+    width: 100%;
+}
+.containerTitul{
+    display: flex;
+    margin: auto;
+    width: 76%;
+}
+.year{
+    margin-right: 100px;
+    text-align: right;
 }
