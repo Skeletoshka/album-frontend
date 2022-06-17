@@ -3,20 +3,6 @@ import "./Student.css"
 import {input1, input2} from "./CONST"
 import {useParams} from "react-router";
 
-const emptyItem = {
-    studentId:0,
-    studentName:"",
-    studentLastName:"",
-    studentMiddleName:"",
-    facultyId:1,
-    facultyName:"",
-    studentPhotoPath:"",
-    studentDescription:"",
-    studentStudyEnd:0,
-    studentSpecialCase:0,
-    studentNumStar: 0
-}
-
 const firstStudent =
     <div className={"containerTitul"}>
         <div>
@@ -77,27 +63,31 @@ export default function Students(){
                 else endYear = "Год выпуска: " + studentCheck.studentStudyEnd;
                 return (
                     <div className={"container"}>
-                        <div className={"PageContainer"}>
-                            <div className={"leftContainer"}>
-                                <div className={"up1"}>
-                                    <h3>{studentCheck.studentLastName} {studentCheck.studentName} {studentCheck.studentMiddleName}
-                                    <img className={"logo"} src = {process.env.PUBLIC_URL+"/star.png"}/> {endYear}</h3>
+                        <div className={"page"}>
+                            <div className={"pageContainer"}>
+                                <div className={"leftContainer"}>
+                                    <div className={"up2"}>
+                                        <img className={"photo"} src = {process.env.PUBLIC_URL + "/images/" + studentCheck.studentPhotoPath} alt={"student photo"}/>
+                                    </div>
+                                    <div className={"down2"} align={"center"}>
+                                        <h3>Звезда номер {studentCheck.studentNumStar}</h3>
+                                    </div>
                                 </div>
-                                <div className={"down1"}>
-                                    <p className={"desc"}>{studentCheck.studentDescription}</p>
+                                <div className={"rightContainer"}>
+                                    <div className={"up1"}>
+                                        {studentCheck.studentLastName} {studentCheck.studentName} {studentCheck.studentMiddleName}
+                                        <img className={"logo"} src = {process.env.PUBLIC_URL+"/star.png"}/> {endYear}
+                                    </div>
+                                    <div className={"down1"}>
+                                        <p className={"desc"}>{studentCheck.studentDescription}</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div className={"rightContainer"}>
-                                <div className={"up2"}>
-                                    <img className={"photo"} src = {process.env.PUBLIC_URL + "/images/" + studentCheck.studentPhotoPath} alt={"student photo"}/>
-                                </div>
-                                <div className={"down2"} align={"center"}>
-                                    <h3>Звезда номер {studentCheck.studentNumStar}</h3>
+                            <div className={"PSContainer"}>
+                                <div className={"downContainer"} align={"center"}>
+                                    <p className={"facultyName"}>Факультет {studentCheck.facultyName.toLowerCase()}</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className={"downContainer"} align={"center"}>
-                            <p className={"facultyName"}>Факультет {studentCheck.facultyName.toLowerCase()}</p>
                         </div>
                     </div>)
             }
