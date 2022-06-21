@@ -143,9 +143,9 @@ export default function Students(){
 
     return(
         <div className={"albumContainer"}>
-            <div className={"leftButton"}><input type = {"image"} src = {process.env.PUBLIC_URL + "/arrowLeft.png"} alt={"previous student"} onClick={() => previousStudent()}/></div>
+            <div className={"leftButton"}><input className={"leftArrow"} type = {"image"} src = {process.env.PUBLIC_URL + "/arrowLeft.png"} alt={"previous student"} onClick={() => previousStudent()}/></div>
             <div className={"albumPage"}>{student}</div>
-            <div className={"rightButton"}><input type = {"image"} src = {process.env.PUBLIC_URL + "/arrowNext.png"} alt={"next student"} onClick={() => nextStudent()}/></div>
+            <div className={"rightButton"}><input className={"rightArrow"} type = {"image"} src = {process.env.PUBLIC_URL + "/arrowNext.png"} alt={"next student"} onClick={() => nextStudent()}/></div>
         </div>
 
     )

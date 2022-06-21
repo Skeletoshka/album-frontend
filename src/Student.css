@@ -92,7 +92,7 @@
     min-width: 100%;
     background-color: #eeeeee;
     border-radius: 10px;
-    border: 100px outset rgba(211, 220, 50, .6);
+    border: 2.5mm outset rgb(164, 144, 42);
 }
 .albumContainer{
     display: table;
@@ -134,4 +134,10 @@
 .year{
     margin-right: 100px;
     text-align: right;
+}
+.leftArrow{
+width: 15.5vh;
+}
+.rightArrow{
+width: 15.5vh;
 }
