@@ -28,7 +28,8 @@ const firstStudent =
 
 export default function Students(){
     const params = useParams();
-    document.body.style = 'background: #0f5;';
+
+    document.body.style = 'background-image:' + process.env.PUBLIC_URL + '/night_star ; background-color: rgba(131, 255, 152, 0.5);';
 
     const [students, setStudents] = useState();
     const [student, setStudent] = useState(firstStudent);
@@ -60,7 +61,7 @@ export default function Students(){
                 check = false;
                 let endYear;
                 if(studentCheck.studentSpecialCase === 1) endYear = "Особый случай"
-                else endYear = "Год выпуска: " + studentCheck.studentStudyEnd;
+                else endYear = "Год выпуска " + studentCheck.studentStudyEnd;
                 return (
                     <div className={"container"}>
                         <div className={"page"}>

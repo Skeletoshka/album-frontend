@@ -5,7 +5,7 @@
     vertical-align: middle;
     height: 33vw;
 }
-.page{
+.pagnpm e{
     display: table;
     margin: auto;
 }
@@ -33,16 +33,17 @@
     background-color: #eeeeee;
     border-radius: 10px;
     width: 100%;
-    border: 1px solid black;
+    border: 1mm outset rgba(211, 220, 50, .6);
     font-size: 1.3vw;
     font-style: italic;
     font-weight: bold;
+
 }
 .down1{
     max-width: 100%;
     background-color: #eeeeee;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 1mm outset rgba(211, 220, 50, .6);
     min-height: 83%;
 }
 .down2{
@@ -50,7 +51,7 @@
     border-radius: 10px;
     width: 100%;
     max-height: 10%;
-    border: 1px solid black;
+    border: 2mm outset rgba(211, 220, 50, .6);
 }
 .desc{
     font-size: 0.8vw;
@@ -62,6 +63,7 @@
     text-align: justify;
     margin-left: 2vw;
     margin-right: 2vw;
+
 }
 .leftButton{
     display: table-cell;
@@ -78,6 +80,7 @@
     margin:auto;
     display: table-cell;
     vertical-align: middle;
+
 }
 .pageContainer{
     display: table-row;
@@ -90,7 +93,7 @@
     min-width: 100%;
     background-color: #eeeeee;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 2mm outset rgba(211, 220, 50, .6);
 }
 .albumContainer{
     display: table;
@@ -100,6 +103,7 @@
     height: 100%;
     width: 100%;
     margin:auto;
+
 }
 .facultyName{
     font-size: 40px;
@@ -130,4 +134,5 @@
 .year{
     margin-right: 100px;
     text-align: right;
+
 }
