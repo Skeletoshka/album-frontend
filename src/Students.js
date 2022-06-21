@@ -29,7 +29,7 @@ const firstStudent =
 export default function Students(){
     const params = useParams();
 
-    document.body.style = 'background-image:' + process.env.PUBLIC_URL + '/night_star ; background-color: rgba(131, 255, 152, 0.5);';
+    document.body.style = 'background-image:url(' + process.env.PUBLIC_URL + '/night_star.jpg) ;';
 
     const [students, setStudents] = useState();
     const [student, setStudent] = useState(firstStudent);
