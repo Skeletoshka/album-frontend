@@ -25,7 +25,7 @@ export default function AddStudent(){
     const [faculties, setFaculties] = useState()
     const [facultyList, setFacultyList] = useState()
     const [item, setItem] = useState(emptyItem);
-    const [action, setAction] = useState("get" );
+    const [action, setAction] = useState("auth" );
 
     useEffect(() => {
         fetch('http://localhost:8090/student/getlist',{
@@ -129,6 +129,43 @@ export default function AddStudent(){
         });
     }
 
+    let login = undefined;
+    let password = undefined;
+
+    function handleChange1(event) {
+        const target = event.target;
+        const value = target.value;
+        if (target.name === "login"){login = value}
+        if (target.name === "password"){password = value}
+    }
+
+    async function handleSubmit1(event){
+        event.preventDefault();
+        if (login === "SYSDBA" && password === "masterkey") {
+            setAction("get")
+        }
+    }
+
+    if(action === "auth"){
+        return(
+            <div>
+                <Container fluid>
+                    <FormGroup>
+                        <Label for="login">Логин</Label>
+                        <input type="text" name="login" id="login" onChange={handleChange1}/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="password">Пароль</Label>
+                        <input type="text" name="password" id="password" onChange={handleChange1}/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Button color="primary" type="submit" onClick={handleSubmit1}>Войти</Button>{' '}
+                        <Button color="secondary" onClick={() => window.location.reload()}>Сброс</Button>
+                    </FormGroup>
+                </Container>
+            </div>
+        )
+    }
     if(action === "get" || action === "delete") {
         return (
             <div>
